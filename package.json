@@ -1,0 +1,23 @@
+{
+  "name": "message_board",
+  "version": "1.0.0",
+  "description": "exercise",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mimittqq/message_board.git"
+  },
+  "keywords": [
+    "typescript",
+    "koa"
+  ],
+  "author": "mimittqq <332990332@qq.com> (https://github.com/mimittqq)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mimittqq/message_board/issues"
+  },
+  "homepage": "https://github.com/mimittqq/message_board#readme"
+}
