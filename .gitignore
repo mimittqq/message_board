@@ -10,3 +10,4 @@ build
 webpack/dll/
 config/local.*
 local_mark.md
+*.local.json

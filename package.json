@@ -2,9 +2,10 @@
   "name": "message_board",
   "version": "1.0.0",
   "description": "exercise",
-  "main": "index.js",
+  "main": "./build/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server_dev": "tsc -w & nodemon --watch ./build/index.js localhost 1234"
   },
   "repository": {
     "type": "git",
@@ -19,5 +20,26 @@
   "bugs": {
     "url": "https://github.com/mimittqq/message_board/issues"
   },
-  "homepage": "https://github.com/mimittqq/message_board#readme"
+  "homepage": "https://github.com/mimittqq/message_board#readme",
+  "devDependencies": {
+    "@types/koa": "^2.0.48",
+    "@types/koa-router": "^7.0.40",
+    "@types/mysql": "^2.15.5",
+    "@types/node": "^11.13.0",
+    "@types/webpack": "^4.4.27",
+    "nodemon": "^1.18.10",
+    "ts-node": "^8.0.3",
+    "typescript": "^3.4.1",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0",
+    "webpack-dev-server": "^3.2.1"
+  },
+  "dependencies": {
+    "chinese-random-name": "^1.0.0",
+    "koa": "^2.7.0",
+    "koa-router": "^7.4.0",
+    "mysql": "^2.16.0",
+    "reflect-metadata": "^0.1.13",
+    "typeorm": "^0.2.16"
+  }
 }
