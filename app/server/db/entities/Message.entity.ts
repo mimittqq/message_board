@@ -23,12 +23,12 @@ export class Message {
   ip!: string;
 
   @Column({
-    type: 'int',
+    type: 'timestamp',
   })
   create_time!: number;
 
   @Column({
-    type: 'int',
+    type: 'timestamp',
   })
   update_time!: number;
 }

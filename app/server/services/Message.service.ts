@@ -8,4 +8,7 @@ export class MessageService {
   getAll() {
     return this.repository.getMessages();
   }
+  add(ip:string) {
+     
+  }
 }

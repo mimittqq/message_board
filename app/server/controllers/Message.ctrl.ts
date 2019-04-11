@@ -1,4 +1,4 @@
-import { Get, JsonController, Res } from 'routing-controllers';
+import { Get, JsonController, Res, Post, Req } from 'routing-controllers';
 import { Inject } from 'typedi';
 import { MessageService } from '../services/Message.service';
 import { Request, Response } from 'express';
@@ -11,5 +11,9 @@ export class MessageController {
   @Get('s')
   getAllMessage() {
     return this.messageService.getAll();
+  }
+  @Post()
+  addMessage(@Req() request:Request) {
+    return this.messageService.add(request.ip);
   }
 }
