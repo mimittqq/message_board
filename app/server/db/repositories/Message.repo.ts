@@ -1,6 +1,8 @@
-import { EntityRepository, AbstractRepository, Repository, getRepository } from "typeorm";
-import { Message } from '../../../db/entities/Message.entity';
+import { Repository, getRepository } from "typeorm";
+import { Message } from '../entities/Message.entity';
+import { Service as Injectable } from 'typedi';
 
+@Injectable()
 export class MessageRepository {
   repository:Repository<Message>
   constructor() {

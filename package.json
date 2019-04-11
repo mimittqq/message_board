@@ -5,7 +5,7 @@
   "main": "./build/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "server_dev": "tsc -w & nodemon --watch ./build/index.js localhost 1234"
+    "server_dev": "tsc -w & nodemon localhost 1234"
   },
   "repository": {
     "type": "git",
@@ -22,8 +22,6 @@
   },
   "homepage": "https://github.com/mimittqq/message_board#readme",
   "devDependencies": {
-    "@types/koa": "^2.0.48",
-    "@types/koa-router": "^7.0.40",
     "@types/mysql": "^2.15.5",
     "@types/node": "^11.13.0",
     "@types/webpack": "^4.4.27",
@@ -35,11 +33,17 @@
     "webpack-dev-server": "^3.2.1"
   },
   "dependencies": {
+    "@types/body-parser": "^1.17.0",
+    "@types/express": "^4.16.1",
+    "@types/multer": "^1.3.7",
+    "body-parser": "^1.18.3",
     "chinese-random-name": "^1.0.0",
-    "koa": "^2.7.0",
-    "koa-router": "^7.4.0",
+    "express": "^4.16.4",
+    "multer": "^1.4.1",
     "mysql": "^2.16.0",
     "reflect-metadata": "^0.1.13",
+    "routing-controllers": "^0.7.7",
+    "typedi": "^0.8.0",
     "typeorm": "^0.2.16"
   }
 }

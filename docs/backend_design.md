@@ -2,15 +2,15 @@
 
 表设计
 
-    CREATE TABLE `tbl_message` (
-      `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-      `nickname` varchar(10) CHARACTER SET utf8 NOT NULL DEFAULT '',
-      `content` varchar(255) CHARACTER SET utf8 NOT NULL DEFAULT '',
-      `ip` varchar(15) CHARACTER SET utf8 NOT NULL DEFAULT '',
-      `create_time` datetime NOT NULL,
-      `update_time` datetime NOT NULL,
-      PRIMARY KEY (`id`)
-    ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+CREATE TABLE `tbl_message` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `nickname` varchar(10) CHARACTER SET utf8 NOT NULL DEFAULT '',
+  `content` varchar(255) CHARACTER SET utf8 NOT NULL DEFAULT '',
+  `ip` varchar(15) CHARACTER SET utf8 NOT NULL DEFAULT '',
+  `create_time` int(10) unsigned NOT NULL,
+  `update_time` int(10) unsigned NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 
 

@@ -6,7 +6,7 @@ if (!MysqlConfig) {
 }
 
 const orm_config:MysqlConnectionOptions = Object.assign({
-  type: 'mysql',
+  type: 'mysql' as 'mysql' | 'mariadb',
   entities: [
     __dirname + '/../db/entities/*.entity.js',
   ]

@@ -1,21 +1,27 @@
-import Koa from 'koa';
-import Router from 'koa-router';
+import express from 'express';
 import 'reflect-metadata';
-import { message_router } from './router/message/route';
+import { useExpressServer, useContainer as routingUseContainer } from 'routing-controllers';
+import { Application } from 'express-serve-static-core';
+import Container from 'typedi';
 
 export class App {
-  app: Koa;
+  app:Application;
   port:number;
   constructor(port:number) {
-    this.app = new Koa();
+    this.app = express();
     this.port = port;
-    this.init();
+    this.initDI();
+    this.initRouters();
   }
-  init() {
-    // this.app.use((ctx) => {
-    //   ctx.body = 'hello koa';
-    // });
-    this.app.use(message_router.routes());
+  initDI() {
+    routingUseContainer(Container);
+  }
+  initRouters() {
+    useExpressServer(this.app, {
+      controllers: [
+        `${__dirname}/controllers/**/*.js`,
+      ]
+    })
   }
   listen() {
     this.app.listen(this.port, () => {
@@ -23,11 +29,3 @@ export class App {
     })
   }
 }
-
-// const app = new Koa();
-
-// app.use((ctx) => {
-//   ctx.body = 'hello koa';
-// })
-
-// app.listen(3000);
