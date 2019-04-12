@@ -19,6 +19,7 @@ export class App {
   initRouters() {
     useExpressServer(this.app, {
       routePrefix: '/api',
+      defaultErrorHandler: false,
       controllers: [
         `${__dirname}/controllers/**/*.js`,
       ]

@@ -60,6 +60,7 @@
   "exclude": [
     "node_modules",
     "build",
-    "./app/client"
+    "./app/client",
+    "**/__test__"
   ]
 }

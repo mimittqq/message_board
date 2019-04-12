@@ -1,5 +1,6 @@
 import { Inject, Service } from 'typedi';
 import { MessageRepository } from '../db/repositories/Message.repo';
+import { MessageCreateType } from '../db/repositories/message_repo';
 
 @Service()
 export class MessageService {
@@ -8,7 +9,7 @@ export class MessageService {
   getAll() {
     return this.repository.getMessages();
   }
-  add(ip:string) {
-     
+  add(message:MessageCreateType) {
+    return this.repository.create(message);
   }
 }

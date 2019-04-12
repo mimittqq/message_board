@@ -4,7 +4,7 @@
   "description": "exercise",
   "main": "./build/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "server_dev": "tsc -w & nodemon localhost 1234"
   },
   "repository": {
@@ -22,10 +22,16 @@
   },
   "homepage": "https://github.com/mimittqq/message_board#readme",
   "devDependencies": {
+    "@types/axios": "^0.14.0",
+    "@types/jest": "^24.0.11",
     "@types/mysql": "^2.15.5",
     "@types/node": "^11.13.0",
     "@types/webpack": "^4.4.27",
+    "babel-core": "^6.26.3",
+    "babel-preset-es2015": "^6.24.1",
+    "jest": "^24.7.1",
     "nodemon": "^1.18.10",
+    "ts-jest": "^24.0.2",
     "ts-node": "^8.0.3",
     "typescript": "^3.4.1",
     "webpack": "^4.29.6",
@@ -36,6 +42,7 @@
     "@types/body-parser": "^1.17.0",
     "@types/express": "^4.16.1",
     "@types/multer": "^1.3.7",
+    "axios": "^0.18.0",
     "body-parser": "^1.18.3",
     "chinese-random-name": "^1.0.0",
     "express": "^4.16.4",

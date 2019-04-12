@@ -1,7 +1,9 @@
-import { Get, JsonController, Res, Post, Req } from 'routing-controllers';
+import { Get, JsonController, Post, Req, Body, Res } from 'routing-controllers';
 import { Inject } from 'typedi';
 import { MessageService } from '../services/Message.service';
 import { Request, Response } from 'express';
+import { MessageCreateType } from '../db/repositories/message_repo';
+import { Omit } from '../../utils/def/common';
 
 @JsonController('/message')
 export class MessageController {
@@ -9,11 +11,23 @@ export class MessageController {
   private messageService!:MessageService;
 
   @Get('s')
-  getAllMessage() {
-    return this.messageService.getAll();
+  async getAllMessage() {
+    try {
+      return this.messageService.getAll();
+    } catch (err) {
+      throw new Error(err);
+    }
   }
   @Post()
-  addMessage(@Req() request:Request) {
-    return this.messageService.add(request.ip);
+  async addMessage(
+    @Req() request:Request,
+    @Body() message:Omit<MessageCreateType, 'ip'>,
+    @Res() response:Response) {
+    await this.messageService.add({
+      ip: request.ip,
+      content: message.content,
+      nickname: message.nickname,
+    });
+    return response.sendStatus(204);
   }
 }

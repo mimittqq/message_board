@@ -1,6 +1,7 @@
 import { createConnection } from "typeorm";
 import orm_config from './config/orm.config';
-import { App } from './app';
+import { App } from './App';
+import './route_middleware';
 
 (async () => {
   try {
